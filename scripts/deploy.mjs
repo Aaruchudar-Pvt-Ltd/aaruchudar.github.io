@@ -42,11 +42,8 @@ function parseGithubRemote(remoteUrl) {
 
 const remoteUrl = git(["remote", "get-url", "origin"]);
 const { owner, repo } = parseGithubRemote(remoteUrl);
-const isUserOrOrgSite = repo.toLowerCase() === `${owner}.github.io`.toLowerCase();
-const basePath = isUserOrOrgSite ? "/" : `/${repo}/`;
-const siteUrl = isUserOrOrgSite
-  ? `https://${owner}.github.io/`
-  : `https://${owner}.github.io/${repo}/`;
+const basePath = process.env.VITE_BASE_PATH || "/";
+const siteUrl = "https://aaruchudar.com/";
 
 console.log(`Deploying ${owner}/${repo}`);
 console.log(`Vite base: ${basePath}`);
@@ -55,10 +52,13 @@ run("npm", ["run", "build"], { VITE_BASE_PATH: basePath });
 copyFileSync(path.join(distDir, "index.html"), path.join(distDir, "404.html"));
 writeFileSync(path.join(distDir, ".nojekyll"), "");
 
+ghpages.clean();
+
 const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
 const publishOptions = {
   branch: "gh-pages",
   dotfiles: true,
+  history: false,
   message: "Deploy static site to GitHub Pages",
 };
 
