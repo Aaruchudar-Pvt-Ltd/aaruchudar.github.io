@@ -1,0 +1,1 @@
+function e(e,t,n=`hi@aaruchudar.com`){let r=`mailto:${n}?subject=${encodeURIComponent(e)}&body=${encodeURIComponent(t)}`;window.location.href=r}export{e as t};
