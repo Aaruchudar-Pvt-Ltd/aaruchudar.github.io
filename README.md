@@ -21,8 +21,14 @@ Forms (contact, careers, webinar, billing) open the visitor’s email app and se
 
 ## GitHub Pages
 
-1. Push this repo to GitHub.
-2. In the repository, open **Settings → Pages** and set Source to **GitHub Actions**.
-3. The included workflow builds the static site and publishes it on every push to `main`.
+```bash
+npm run deploy
+```
 
-For a project site (`https://<user>.github.io/<repo>/`) the workflow sets the Vite base path automatically. For a user/org site (`https://<user>.github.io/`) it uses `/`.
+That command builds the static site, adds the SPA `404.html` fallback, and publishes the `dist` folder to the `gh-pages` branch.
+
+One-time setup: in the repository, open **Settings → Pages**, set Source to **Deploy from a branch**, and choose **`gh-pages` / (root)**.
+
+Pushes to `main` run the same `npm run deploy` from GitHub Actions.
+
+For a project site (`https://<user>.github.io/<repo>/`) the Vite base path is set automatically. For a user/org site (`https://<user>.github.io/`) it uses `/`.
