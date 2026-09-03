@@ -1,0 +1,49 @@
+/* Scope styles to local header class to satisfy CSS Modules purity */
+.header {
+  background: rgba(11, 22, 48, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(37, 99, 235, 0.18);
+}
+
+.header span {
+  text-shadow: none;
+}
+
+.header a {
+  color: #EAF2FF !important;
+}
+
+.header a.cta-primary,
+.header .cta-primary {
+  color: #ffffff !important;
+}
+
+.nav-tab {
+  text-shadow: none;
+  color: #EAF2FF !important;
+  transition: color 0.2s ease;
+}
+
+.nav-tab:hover {
+  color: #3B82F6 !important;
+}
+
+.tab-underline {
+  color: #EAF2FF !important;
+}
+
+.tab-underline-active {
+  color: #3B82F6 !important;
+  text-shadow: none;
+}
+
+.dropdown-item {
+  color: #EAF2FF !important;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus-visible {
+  background: rgba(37, 99, 235, 0.18);
+  color: #ffffff !important;
+}

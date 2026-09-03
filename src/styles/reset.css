@@ -1,0 +1,12 @@
+/* Keep reset inside a layer so Tailwind spacing/color utilities win */
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+}

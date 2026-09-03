@@ -1,0 +1,123 @@
+"use client";
+
+import React, { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+function Navbar() {
+  const [show, setShow] = useState(true);
+  const [activeTab, setActiveTab] = useState("home");
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY.current && currentScrollY > 60) {
+        setShow(false);
+      } else {
+        setShow(true);
+      }
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (!pathname) return;
+    const match = navItems.find((n) => pathname.startsWith(n.href));
+    if (match) setActiveTab(match.id);
+    else setActiveTab("home");
+  }, [pathname]);
+
+  const navItems = [
+    { id: "home", label: "Home", href: "/" },
+    { id: "blog", label: "Blog", href: "/blog" },
+    { id: "research", label: "Research", href: "/research" },
+    { id: "contact", label: "Contact", href: "/contact" },
+    { id: "product", label: "Product", href: "/productpage" },
+    { id: "franchise", label: "Franchise", href: "/franchise" },
+    { id: "internship", label: "Internship", href: "/internship" },
+    { id: "careers", label: "Careers", href: "/careers" },
+  ];
+
+  return (
+    <>
+      {/* ================= DESKTOP NAVBAR ================= */}
+      <header
+        className={`hidden md:block fixed z-[999] top-0 left-1/2 -translate-x-1/2 transition-all duration-500 ${
+          show ? "translate-y-0" : "-translate-y-28"
+        }`}
+      >
+        <div className="px-6 py-2 flex items-center gap-6 rounded-full backdrop-blur-lg bg-amber-900/40">
+          <Link href="/" className="flex items-center gap-2">
+            <Image src="/logo2.png" alt="Logo" width={40} height={40} />
+            <span className="font-bold text-[#EAF2FF]">AARUCHUDAR</span>
+          </Link>
+        </div>
+      </header>
+
+      {/* ================= MOBILE TOP NAVBAR ================= */}
+      <header
+        className={`md:hidden fixed top-0 left-0 right-0 z-[999] transition-transform duration-500 ${
+          show ? "translate-y-0" : "-translate-y-full"
+        }`}
+      >
+        <div className="flex items-center justify-between px-5 py-3 backdrop-blur-lg bg-amber-900/40">
+          <Link href="/" className="flex items-center gap-2">
+            <Image src="/logo2.png" alt="Logo" width={30} height={30} />
+            <span className="font-semibold text-[#EAF2FF]">AARUCHUDAR</span>
+          </Link>
+
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle Menu"
+            className="
+					text-orange-400 
+					hover:text-orange-500 
+					transition 
+					text-2xl 
+					leading-none
+					focus:outline-none
+					bg-transparent
+					border-none
+					p-0
+				"
+          >
+            {mobileOpen ? "✕" : "☰"}
+          </button>
+        </div>
+
+        {/* MOBILE DROPDOWN */}
+        <div
+          className={`overflow-hidden transition-all duration-300 backdrop-blur-lg bg-black/70 ${
+            mobileOpen ? "max-h-[480px] py-3" : "max-h-0 py-0"
+          } border-t border-white/10`}
+        >
+          <nav className="flex flex-col px-5">
+            {navItems.map((item) => (
+              <Link
+                key={item.id}
+                href={item.href}
+                onClick={() => {
+                  setActiveTab(item.id);
+                  setMobileOpen(false);
+                }}
+                className={`text-base font-semibold py-2 border-b border-white/10 last:border-b-0 text-[#EAF2FF]`}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      </header>
+    </>
+  );
+}
+
+export default Navbar;
