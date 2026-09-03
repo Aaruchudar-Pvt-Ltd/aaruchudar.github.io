@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import React from "react";
 import Link from "next/link";
+import { asset } from "@/lib/asset";
 import "./BlogPage.css";
 
 type BlogPost = {
@@ -1714,7 +1715,7 @@ It is who you are becoming.`
 
               <div className="full-blog-imageWrap">
                 <img
-                  src={selectedBlog.image}
+                  src={asset(selectedBlog.image)}
                   alt={selectedBlog.title}
                   className="full-blog-image"
                 />
@@ -1767,7 +1768,7 @@ It is who you are becoming.`
                 return (
                   <figure key={index} className="full-blog-inlineImageWrap">
                     <img
-                      src={block.src}
+                      src={asset(block.src)}
                       alt={block.alt ?? selectedBlog.title}
                       className="full-blog-inlineImage"
                       loading="lazy"
@@ -1821,7 +1822,7 @@ It is who you are becoming.`
                 onClick={() => setSelectedBlog(post)}
               >
                 <div className="blog-image-wrapper">
-                  <img src={post.image} alt={post.title} className="blog-image" />
+                  <img src={asset(post.image)} alt={post.title} className="blog-image" />
                   <div className="blog-card-badge">{post.category}</div>
                 </div>
 

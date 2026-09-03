@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './styles.module.css';
+import { asset } from '@/lib/asset';
 
 const HIEventsPage = () => {
   const [activeTab, setActiveTab] = useState('upcoming');
@@ -158,7 +159,7 @@ const HIEventsPage = () => {
 
       {/* HERO SECTION (match courses header) */}
       <header className="relative mx-auto max-w-7xl rounded-3xl border border-[#2c4f8f] bg-[#0c1a38]/85 shadow-[0_20px_50px_rgba(0,0,0,0.35)] flex items-center justify-center overflow-hidden py-24 md:py-28 px-6 min-h-[54vh]">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "linear-gradient(180deg, rgba(3,9,24,0.25), rgba(3,9,24,0.85)), url('/images/hi-events-banner.jpg')" }} aria-hidden />
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `linear-gradient(180deg, rgba(3,9,24,0.25), rgba(3,9,24,0.85)), url(${asset("/images/hi-events-banner.jpg")})` }} aria-hidden />
         <div className="absolute inset-0 bg-gradient-to-r from-[#123e85]/75 via-[#1b3678]/45 to-transparent" aria-hidden />
         <div className="relative z-10 max-w-5xl mx-auto text-center">
           <motion.h1 className="text-5xl md:text-6xl font-extrabold mb-4 text-white" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>

@@ -4,6 +4,7 @@ import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Filter, Star, Clock, Layers } from 'lucide-react';
+import { asset } from '@/lib/asset';
 
 interface Workshop {
   type: string;
@@ -114,7 +115,7 @@ export default function HIWorkshopsPage() {
       <header className="relative flex items-center justify-center overflow-hidden py-24 md:py-28 px-6 min-h-[54vh]">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{ backgroundImage: "url('/images/hi-workshops-banner.jpg')" }}
+          style={{ backgroundImage: `url(${asset("/images/hi-workshops-banner.jpg")})` }}
           aria-hidden
         />
         <div className="relative z-10 max-w-5xl mx-auto text-center">

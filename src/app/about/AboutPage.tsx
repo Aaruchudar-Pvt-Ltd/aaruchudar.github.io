@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { asset } from '@/lib/asset';
 
 
 export default function AboutPage() {
@@ -37,7 +38,7 @@ export default function AboutPage() {
       >
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{ backgroundImage: "url('/images/hi-workshops-banner.jpg')" }}
+          style={{ backgroundImage: `url(${asset("/images/hi-workshops-banner.jpg")})` }}
           aria-hidden
         />
         <div className="relative z-10 max-w-5xl mx-auto text-center">

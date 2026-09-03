@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { asset } from "@/lib/asset";
 import {
   Brain, Users, Globe, X, CheckCircle,
   BookOpen, Users as UsersIcon, Target, Map, Building,
@@ -453,7 +454,7 @@ const ExploreDetailsModal = ({ activeModal, setActiveModal, setFormData }) => {
                   Schedule Consultation
                 </button>
                 <a
-                  href={pdfMap[activeModal] || '/assets/Franchise.pdf'}
+                  href={asset(pdfMap[activeModal] || '/assets/Franchise.pdf')}
                   download
                   className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold rounded-xl border border-cyan-400/30 hover:shadow-2xl transition-all hover:scale-105 flex items-center justify-center gap-3"
                 >

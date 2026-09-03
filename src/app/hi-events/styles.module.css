@@ -108,7 +108,7 @@
 .heroBg {
   position: absolute;
   inset: 0;
-  background-image: url('/images/hi-events-banner.jpg');
+  background-image: url('../../../public/images/hi-events-banner.jpg');
   background-size: cover;
   background-position: center;
 }

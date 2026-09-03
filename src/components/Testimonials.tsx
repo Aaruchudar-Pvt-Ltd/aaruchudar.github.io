@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { asset } from '@/lib/asset';
 
 export default function Testimonials() {
   const testimonials = [
@@ -8,7 +9,7 @@ export default function Testimonials() {
       id: 1,
       name: 'Preethi Natarajan',
       role: 'Student',
-      image: '/reviews/1000210446.jpeg',
+      image: asset('/reviews/1000210446.jpeg'),
       rating: 5,
       text: 'The online assessment was very useful to me. It helped me revise the topics and know where I need to improve. Thank you aaruchudar team 👍🏻 for conducting this assessment',
       date: 'March 2024'
@@ -17,7 +18,7 @@ export default function Testimonials() {
       id: 2,
       name: 'Sriram. K. P',
       role: 'Professional',
-      image: '/reviews/1000210449.jpeg',
+      image: asset('/reviews/1000210449.jpeg'),
       rating: 5,
       text: "These online assessments help me how to take clear decisions in group discussion, project, how clearly give explanation to team members and for which things give first priority (like two assignments) (today's question). ---Thank you team AARUCHUDAR ---",
       date: 'February 2024'
@@ -26,7 +27,7 @@ export default function Testimonials() {
       id: 3,
       name: 'Rajesh Kumar',
       role: 'Entrepreneur',
-      image: '/logo2.png',
+      image: asset('/logo2.png'),
       rating: 5,
       text: 'The Human intelligence Labs program transformed my approach to leadership. The clarity thinking workshop was particularly insightful and helped me make better strategic decisions for my business.',
       date: 'January 2024'
@@ -35,7 +36,7 @@ export default function Testimonials() {
       id: 4,
       name: 'Ananya Sharma',
       role: 'Student',
-      image: '/logo2.png',
+      image: asset('/logo2.png'),
       rating: 5,
       text: 'Career Intelligence course was a game-changer! It helped me identify my strengths and align them with my career goals. Highly recommend to all students.',
       date: 'December 2023'
@@ -44,7 +45,7 @@ export default function Testimonials() {
       id: 5,
       name: 'Preethi N',
       role: 'KPR College of Arts Science and Research',
-      image: '/logo2.png',
+      image: asset('/logo2.png'),
       rating: 5,
       text: 'Successfully completed the Aaruchudar Power BI Intelligence Dashboard Assessment with a perfect score! I\'m grateful to Aaruchudar and Aashika Nethaji Ma’am for creating such an innovative learning platform that blends data visualization with human intelligence analytics. This experience deepened my skills in data interpretation, clarity, and analytical reasoning—helping me connect technical knowledge with real-world applications. A meaningful step toward mastering Power BI and advancing human intelligence development.',
       date: 'December 2025'
@@ -53,7 +54,7 @@ export default function Testimonials() {
       id: 6,
       name: 'Sivaharini K',
       role: 'KPR College of Arts Science and Research',
-      image: '/logo2.png',
+      image: asset('/logo2.png'),
       rating: 5,
       text: 'Heartfelt thanks to Aashika Nethaji Ma’am, Founder of Aaruchudar, for organizing these insightful daily quizzes that encourage consistent learning and self-improvement. Each quiz sharpened my clarity of thought, logical reasoning, and decision-making skills. Every question challenged me to think clearly and make better decisions in real-life situations. This was a meaningful learning experience, and I look forward to more such sessions.',
       date: 'December 2025'
@@ -62,7 +63,7 @@ export default function Testimonials() {
       id: 7,
       name: 'Tharanya Rajakanthan',
       role: 'KPR College of Arts Science and Research',
-      image: '/logo2.png',
+      image: asset('/logo2.png'),
       rating: 5,
       text: 'Grateful to Aaruchudar for organizing such an engaging Brain Activity Test—honored to have scored an extraordinary performance. This assessment strengthened my clarity, reasoning abilities, and conceptual understanding through human intelligence insights.',
       date: 'December 2025'
@@ -71,7 +72,7 @@ export default function Testimonials() {
       id: 8,
       name: 'Pavithra Anandakumar',
       role: 'KPR College of Arts Science and Research',
-      image: '/logo2.png',
+      image: asset('/logo2.png'),
       rating: 5,
       text: 'Completed the Mind Lab Assessment with a perfect score, earning the Extraordinary Performer distinction! I am grateful to Aaruchudar and Aashika Nethaji Ma’am for pioneering human intelligence consulting and guiding me through this journey of growth and mental clarity. The Mind Lab framework deepened my clarity, focus, and reasoning skills.',
       date: 'December 2025'
@@ -80,7 +81,7 @@ export default function Testimonials() {
       id: 9,
       name: 'Preethi N',
       role: 'Student',
-      image: '/logo2.png',
+      image: asset('/logo2.png'),
       rating: 5,
       text: 'This certificate represents not just completion, but the consistency, dedication, and focus I’ve built over the past 30 days. I am grateful to Aaruchudar Human Intelligence for the continuous guidance and support throughout this program. Thank you for helping me grow with confidence and clarity. Looking forward to stepping into my next goals with a stronger mindset.',
       date: 'December 2025'
@@ -89,7 +90,7 @@ export default function Testimonials() {
       id: 10,
       name: 'Tharanya Rajakanthan',
       role: 'Student',
-      image: '/logo2.png',
+      image: asset('/logo2.png'),
       rating: 5,
       text: 'Being part of the 30 Days Quiz Challenge has been a truly enriching experience. Each day pushed me to think sharper, learn consistently, and challenge myself beyond my comfort zone. The structure, clarity, and dedication behind every quiz kept me motivated throughout the journey and strengthened my confidence and discipline.',
       date: 'December 2025'
@@ -98,7 +99,7 @@ export default function Testimonials() {
       id: 11,
       name: 'Pavithra Anandakumar',
       role: 'Student',
-      image: '/logo2.png',
+      image: asset('/logo2.png'),
       rating: 5,
       text: 'Thrilled to have successfully completed the 30 Days Test Program at Aaruchudar Human Intelligence and earned the ‘Quiz Grandmaster Champion’ title. This journey helped me develop professional skills, demonstrate consistency, and nurture a passion for learning. Thank you, Aashika Nethaji Ma’am, for your visionary leadership and inspiring growth.',
       date: 'December 2025'
@@ -107,7 +108,7 @@ export default function Testimonials() {
       id: 12,
       name: 'Preethi N',
       role: 'Student',
-      image: '/logo2.png',
+      image: asset('/logo2.png'),
       rating: 5,
       text: 'This certificate reminds me that consistency truly pays off. Honoured to be recognized as a Quiz Grandmaster Champion. Thank you Aaruchudar for inspiring my growth and supporting me throughout this journey.',
       date: 'December 2025'

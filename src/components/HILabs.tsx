@@ -3,6 +3,7 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
 import styles from '../app/hi-labs/styles.module.css';
+import { asset } from '@/lib/asset';
 
 const LABS = [
   {
@@ -124,7 +125,7 @@ const HILabs = () => {
                   Explore Lab {lab.id}
                 </button>
                 <a
-                  href={samplePdfMap[lab.id] ?? '/Lab-documents/demo.pdf'}
+                  href={asset(samplePdfMap[lab.id] ?? '/Lab-documents/demo.pdf')}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`${styles.exploreButton} ${styles.sampleButton}`}

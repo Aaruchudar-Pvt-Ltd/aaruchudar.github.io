@@ -8,8 +8,7 @@ import type { RegionKey } from './InteractiveBrain';
 import { REGION_INFO } from './InteractiveBrain';
 import type { MeshStandardMaterial } from 'three';
 
-// Removed global preload to prevent warnings when the component isn't used immediately
-// useGLTF.preload('/models/brain_areas.glb');
+const BRAIN_MODEL_URL = `${import.meta.env.BASE_URL}models/brain_areas.glb`;
 
 // Define colors for each brain region
 const defaultRegionColors = {
@@ -51,7 +50,7 @@ export function BrainScene({
   disassemble = false,
   showLabelsSmall = false,
 }: BrainSceneProps) {
-  const { scene } = useGLTF('/models/brain_areas.glb');
+  const { scene } = useGLTF(BRAIN_MODEL_URL);
   const [hoveredRegion, setHoveredRegion] = useState<RegionKey | null>(null);
   const [hoveredMesh, setHoveredMesh] = useState<THREE.Mesh | null>(null);
   const [hoveredPosition, setHoveredPosition] = useState<[number, number, number]>([0, 0, 0]);
@@ -377,3 +376,5 @@ export function BrainScene({
     </>
   );
 }
+
+useGLTF.preload(BRAIN_MODEL_URL);

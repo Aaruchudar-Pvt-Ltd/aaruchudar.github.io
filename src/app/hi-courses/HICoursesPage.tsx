@@ -4,6 +4,7 @@ import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Check, ArrowRight, Filter, Star, Clock, Layers, PlayCircle, Brain, Puzzle, CheckCircle } from 'lucide-react';
+import { asset } from '@/lib/asset';
 
 const programs = [
   {
@@ -142,7 +143,7 @@ const HICoursesPage = () => {
 
       {/* HERO SECTION */}
       <header className="relative flex items-center justify-center overflow-hidden py-24 md:py-28 px-6 min-h-[54vh]">
-        <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: "url('/images/hi-courses-banner.jpg')" }} aria-hidden />
+        <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: `url(${asset("/images/hi-courses-banner.jpg")})` }} aria-hidden />
 
         <div className="relative z-10 max-w-5xl mx-auto text-center">
           <motion.h1 className="text-5xl md:text-6xl font-extrabold mb-4 text-white" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>

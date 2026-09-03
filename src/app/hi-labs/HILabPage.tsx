@@ -291,7 +291,7 @@ export default function HILabs() {
             7: '/Lab-documents/demo.pdf',
             8: '/Lab-documents/LAB-08.pdf',
           };
-          const sampleHref = samplePdfMap[labNumber] ?? '/Lab-documents/demo.pdf';
+          const sampleHref = asset(samplePdfMap[labNumber] ?? '/Lab-documents/demo.pdf');
 
           return (
             <div

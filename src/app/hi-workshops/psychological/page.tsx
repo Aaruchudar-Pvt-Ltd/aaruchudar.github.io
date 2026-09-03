@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Clock, Layers, Star } from 'lucide-react';
+import { asset } from '@/lib/asset';
 
 export default function PsychologicalWorkshop() {
   const title = 'Mind Architecture';
@@ -78,7 +79,7 @@ export default function PsychologicalWorkshop() {
           <div className="relative">
             <div
               className="h-44 w-full bg-cover bg-center md:h-56"
-              style={{ backgroundImage: "linear-gradient(180deg, rgba(3,9,24,0.15), rgba(3,9,24,0.8)), url('/images/hi-workshops-banner.jpg')" }}
+              style={{ backgroundImage: `linear-gradient(180deg, rgba(3,9,24,0.15), rgba(3,9,24,0.8)), url(${asset("/images/hi-workshops-banner.jpg")})` }}
               aria-hidden
             />
             <div className="absolute inset-0 bg-gradient-to-r from-[#123e85]/75 via-[#1b3678]/45 to-transparent" aria-hidden />
